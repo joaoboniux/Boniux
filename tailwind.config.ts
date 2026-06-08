@@ -1,0 +1,31 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Fundo ultra-dark orgânico — sem gradientes digitais
+        background: "#0D0D0D",
+        surface: "#141414",
+        // Accent washed terracotta / rust — uso cirúrgico
+        accent: "#C46A55",
+        // Texto editorial
+        heading: "#FAFAFA",
+        body: "#A1A1AA",
+      },
+      fontFamily: {
+        // Headings grandes
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        // Texto de apoio
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
