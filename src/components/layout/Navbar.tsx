@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "work", href: "#work" },
-  { label: "about", href: "#about" },
-  { label: "contact", href: "#footer" },
+  { label: "trabalhos", href: "#work" },
+  { label: "sobre", href: "#about" },
+  { label: "contato", href: "#footer" },
 ];
 
 export default function Navbar() {

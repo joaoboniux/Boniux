@@ -16,10 +16,10 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  { title: "Órbita", year: "2025", discipline: "Product Design", image: "/projects/orbita.svg" },
+  { title: "Órbita", year: "2025", discipline: "Design de Produto", image: "/projects/orbita.svg" },
   { title: "Pulse", year: "2024", discipline: "Design System", image: "/projects/pulse.svg" },
-  { title: "Vértice", year: "2024", discipline: "UX Research", image: "/projects/vertice.svg" },
-  { title: "Marola", year: "2023", discipline: "Brand & UI", image: "/projects/marola.svg" },
+  { title: "Vértice", year: "2024", discipline: "Pesquisa UX", image: "/projects/vertice.svg" },
+  { title: "Marola", year: "2023", discipline: "Marca & UI", image: "/projects/marola.svg" },
 ];
 
 export default function Projects() {
@@ -156,7 +156,7 @@ export default function Projects() {
       <header className="mb-16 flex items-baseline gap-4 md:mb-24">
         <span className="h-px w-10 bg-accent" aria-hidden="true" />
         <h2 className="font-sans text-sm uppercase tracking-[0.3em] text-body">
-          Selected Work
+          Trabalhos Selecionados
         </h2>
       </header>
 

@@ -7,10 +7,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const LINES = [
-  "Crafting digital",
-  "systems with human",
-  "intuition & brutalist",
-  "precision.",
+  "Criando sistemas",
+  "digitais com intuição",
+  "humana & precisão",
+  "brutalista.",
 ];
 
 export default function Hero() {
@@ -41,20 +41,25 @@ export default function Hero() {
   return (
     <section
       ref={root}
-      className="relative flex min-h-screen flex-col justify-end px-6 pb-20 pt-40 md:px-10 md:pb-28"
+      className="relative flex min-h-screen flex-col justify-end pb-20 pt-40 md:pb-28"
     >
-      <p className="hero-meta mb-10 max-w-xs font-sans text-sm leading-relaxed text-body md:mb-16 md:ml-[55%]">
-        <span className="text-accent">/</span> João Boni — Designer / UX
-        operando entre estratégia e pixel.
-      </p>
+      {/* Linha decorativa + meta — alinhados com o heading */}
+      <div className="md:ml-[50%] md:pr-10 px-6 md:px-0">
+        <span
+          className="hero-meta mb-3 block h-px w-full bg-heading/30"
+          aria-hidden="true"
+        />
+        <p className="hero-meta mb-8 font-display text-[20px] font-light leading-normal text-heading">
+          <span className="text-accent">/ </span>
+          Olá, me chamo João Boni e tenho 15 anos de experiência
+        </p>
+      </div>
 
-      <h1 className="font-display text-[clamp(2.75rem,11vw,11rem)] font-semibold leading-[0.92] tracking-tight text-heading">
-        {LINES.map((line, i) => (
+      <h1 className="font-display text-[clamp(2rem,4vw,5.5rem)] font-semibold leading-[1] tracking-tight text-heading md:ml-[50%] px-6 md:px-0">
+        {LINES.map((line) => (
           <span
             key={line}
             className="hero-line block overflow-hidden"
-            // Assimetria intencional: linhas com recuos diferentes.
-            style={{ paddingLeft: i === 1 ? "8%" : i === 3 ? "22%" : "0" }}
           >
             <span className="hero-line__inner block">{line}</span>
           </span>

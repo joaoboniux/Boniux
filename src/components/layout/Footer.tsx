@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="flex items-baseline gap-4">
         <span className="h-px w-10 bg-accent" aria-hidden="true" />
         <p className="font-sans text-sm uppercase tracking-[0.3em] text-body">
-          Get in touch
+          Entre em contato
         </p>
       </div>
 
