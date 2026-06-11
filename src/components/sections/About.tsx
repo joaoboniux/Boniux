@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import { AboutBackground } from "@/components/sections/AboutBackground";
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function About() {
@@ -59,6 +61,23 @@ export default function About() {
 
   return (
     <section id="about" ref={root} className="relative overflow-x-hidden">
+
+      {/* Fundo animado */}
+      <AboutBackground />
+
+      {/* Gradiente topo — funde com seção anterior */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-48"
+        style={{ background: "linear-gradient(to bottom, #0d0d0d, transparent)" }}
+        aria-hidden="true"
+      />
+
+      {/* Gradiente base — funde com seção seguinte */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-48"
+        style={{ background: "linear-gradient(to top, #0d0d0d, transparent)" }}
+        aria-hidden="true"
+      />
 
       {/* Título gigante — beira esquerda da tela */}
       <div ref={titleRef} className="px-1 pt-20 md:pt-32">
