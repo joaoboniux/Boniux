@@ -21,6 +21,12 @@ Fundo **ultra-dark orgânico**. **Sem gradientes de fundo digitais.**
 | `accent`      | `#C46A55` | `text-accent`/`bg-accent` | Washed terracotta / rust — **uso cirúrgico**        |
 | `heading`     | `#FAFAFA` | `text-heading`         | Títulos (branco suave)                                |
 | `body`        | `#A1A1AA` | `text-body`            | Corpo de texto (cinza editorial)                      |
+| `paper`       | `#FAFAFA` | `bg-paper`             | Fundo claro das páginas de case                       |
+| `ink`         | `#0D0D0D` | `text-ink`             | Títulos sobre fundo claro                             |
+| `ink-soft`    | `#2B2B2E` | `text-ink-soft`        | Corpo de texto sobre fundo claro                      |
+
+Cada case pode ter uma cor de marca própria (ex.: `#0054FF` no Portal de
+produtos), aplicada via CSS var `--case-brand` (`bg-[var(--case-brand)]`).
 
 ### Uso do Accent (`#C46A55`) — analógico e cirúrgico
 

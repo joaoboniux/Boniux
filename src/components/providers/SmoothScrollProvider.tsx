@@ -13,7 +13,8 @@
  * são removidos no unmount para evitar memory leaks.
  */
 
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -56,6 +57,24 @@ export default function SmoothScrollProvider({
       lenisRef.current = null;
     };
   });
+
+  const pathname = usePathname();
+  const previousPathname = useRef(pathname);
+
+  // Troca de rota: reposiciona o Lenis (topo ou âncora) e recalcula os triggers da nova página.
+  useEffect(() => {
+    if (previousPathname.current === pathname) return;
+    previousPathname.current = pathname;
+
+    const lenis = lenisRef.current;
+    ScrollTrigger.refresh();
+    if (!lenis) return;
+    const { hash } = window.location;
+    lenis.scrollTo(hash && document.querySelector(hash) ? hash : 0, {
+      immediate: true,
+      force: true,
+    });
+  }, [pathname]);
 
   return <>{children}</>;
 }

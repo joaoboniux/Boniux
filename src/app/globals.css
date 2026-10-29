@@ -41,6 +41,16 @@
   .project-link.is-active .project-meta {
     @apply text-accent;
   }
+
+  /* Coluna de leitura dos cases (1300px no frame de 2148px do Figma). */
+  .case-container {
+    @apply mx-auto w-[calc(100%-3rem)] max-w-[1300px] md:w-[calc(100%-5rem)] lg:w-[78%];
+  }
+
+  /* Faixa larga dos cases (1670px no frame de 2148px do Figma). */
+  .case-wide {
+    @apply mx-auto w-[calc(100%-1.5rem)] max-w-[1670px] md:w-[calc(100%-3rem)] lg:w-[90%];
+  }
 }
 
 /*

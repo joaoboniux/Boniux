@@ -2,25 +2,14 @@
 
 import { useCallback, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import { PROJECTS, projectHref } from "@/data/projects";
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-type Project = {
-  title: string;
-  year: string;
-  discipline: string;
-  image: string;
-};
-
-const PROJECTS: Project[] = [
-  { title: "Órbita", year: "2025", discipline: "Design de Produto", image: "/projects/orbita.svg" },
-  { title: "Pulse", year: "2024", discipline: "Design System", image: "/projects/pulse.svg" },
-  { title: "Vértice", year: "2024", discipline: "Pesquisa UX", image: "/projects/vertice.svg" },
-  { title: "Marola", year: "2023", discipline: "Marca & UI", image: "/projects/marola.svg" },
-];
 
 export default function Projects() {
   const root = useRef<HTMLElement>(null);
@@ -163,11 +152,11 @@ export default function Projects() {
       <ul className="border-t border-white/10">
         {PROJECTS.map((project, index) => (
           <li
-            key={project.title}
+            key={project.slug}
             className="project-row overflow-hidden border-b border-white/10"
           >
-            <a
-              href="#work"
+            <Link
+              href={projectHref(project)}
               data-project-index={index}
               className="project-link group flex items-baseline justify-between gap-6 py-7 md:py-10"
             >
@@ -182,7 +171,7 @@ export default function Projects() {
               <span className="project-meta hidden font-sans text-sm text-body transition-colors duration-500 md:block">
                 {project.discipline} — {project.year}
               </span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -196,7 +185,7 @@ export default function Projects() {
       >
         {PROJECTS.map((project, index) => (
           <Image
-            key={project.title}
+            key={project.slug}
             src={project.image}
             alt=""
             fill

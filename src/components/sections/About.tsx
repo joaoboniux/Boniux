@@ -101,7 +101,7 @@ export default function About() {
         />
 
         {/* Subtítulo + Corpo */}
-        <div className="space-y-12 px-6 py-12 md:py-16 md:pl-[8%] md:pr-16">
+        <div className="max-w-[960px] space-y-12 px-6 py-12 md:py-16 md:pl-[8%] md:pr-16">
 
           <div className="overflow-hidden">
             <span className="about-reveal block font-display text-[clamp(1.75rem,2.6vw,3.5rem)] font-medium leading-[1.1] text-heading">

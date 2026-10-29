@@ -16,6 +16,12 @@ const config: Config = {
         // Texto editorial
         heading: "#FAFAFA",
         body: "#A1A1AA",
+        // Tema claro das páginas de case
+        paper: "#FAFAFA",
+        ink: {
+          DEFAULT: "#0D0D0D",
+          soft: "#2B2B2E",
+        },
       },
       fontFamily: {
         // Headings grandes
